@@ -1,14 +1,14 @@
 {
   "User": {
-    "firstName": { "string": {} },
-    "lastName": { "string": {} },
+    "firstName": { "loremWord": {} },
+    "lastName": { "loremWord": {} },
     "emailAddress": { "string": {} },
     "groups": {
       "hasMany": "Group"
     }
   },
   "Task": {
-    "title": { "string": {} },
+    "title": { "loremWords": { "minLength": 5, "maxLength": 20 } },
     "createdAt": {
       "dateTime": {
         "min": "2010-01-01T00:00:00Z",
