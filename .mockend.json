@@ -6,7 +6,7 @@
     }
   },
   "Comment": {
-    "body": { "loremSentences": {} },
+    "body": { "loremSentences": {"minLength":100, "maxLength":200} },
     "post": {
       "belongsTo": "Post"
     }
