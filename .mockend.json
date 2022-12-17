@@ -6,7 +6,7 @@
     }
   },
   "Comment": {
-    "body": { "loremSentence": {} },
+    "body": { "loremSentences": {} },
     "post": {
       "belongsTo": "Post"
     }
