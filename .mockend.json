@@ -1,46 +1,25 @@
 {
   "User": {
-    "firstName": { "loremWord": {} },
-    "lastName": { "loremWord": {} },
-    "email": { "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}" },
-    "groups": {
-      "hasMany": "Group"
-    }
+    "firstName": { "string": {} },
+    "lastName": { "string": {} },
+    "emailAddress": { "string": {} },
+    "group": { "belongsTo": "Group" },
   },
   "Task": {
-    "title": { "loremWords": { "minLength": 5, "maxLength": 20 } },
-    "createdAt": {
-      "dateTime": {
-        "min": "2010-01-01T00:00:00Z",
-        "max": "2020-12-31T23:59:59Z"
-      }
-    },
-    "lists": {
-      "hasMany": "List"
-    }
+    "title": { "string": {} },
+    "createdAt": { "dateTime": {} },
+    "list": { "belongsTo": "List" },
   },
   "List": {
-    "tasks": {
-      "hasMany": "Task"
-    },
-    "boards": {
-      "hasMany": "Board"
-    }
+    "tasks": { "hasMany": "Task" },
+    "board": { "belongsTo": "Board" },
   },
   "Board": {
-    "lists": {
-      "hasMany": "List"
-    },
-    "groups": {
-      "hasMany": "Group"
-    }
+    "lists": { "hasMany": "List" },
+    "group": { "belongsTo": "Group" },
   },
   "Group": {
-    "users": {
-      "hasMany": "User"
-    },
-    "boards": {
-      "hasMany": "Board"
-    }
+    "users": { "hasMany": "User" },
+    "boards": { "hasMany": "Board" },
   }
 }
