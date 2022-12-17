@@ -1,56 +1,72 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Education App Schema",
-	"type": "object",
-	"properties": {
-		"students": {
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"name": {
-						"type": "string"
-					},
-					"age": {
-						"type": "integer"
-					},
-					"gender": {
-						"type": "string"
-					},
-					"courses": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						}
-					}
-				},
-				"required": ["name", "age", "gender", "courses"]
-			}
-		},
-		"courses": {
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"name": {
-						"type": "string"
-					},
-					"subject": {
-						"type": "string"
-					},
-					"level": {
-						"type": "string"
-					},
-					"students": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						}
-					}
-				},
-				"required": ["name", "subject", "level", "students"]
-			}
-		}
-	},
-	"required": ["students", "courses"]
+  "endpoints": [
+    {
+      "name": "students",
+      "type": "GET",
+      "response": {
+        "users": [
+          {
+            "id": 1,
+            "name": "John Doe",
+            "courses": [
+              {
+                "course_id": 1,
+                "name": "Math"
+              },
+              {
+                "course_id": 2,
+                "name": "English"
+              },
+              {
+                "course_id": 3,
+                "name": "Science"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Jane Doe",
+            "courses": [
+              {
+                "course_id": 1,
+                "name": "Math"
+              },
+              {
+                "course_id": 2,
+                "name": "English"
+              },
+              {
+                "course_id": 4,
+                "name": "History"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "courses",
+      "type": "GET",
+      "response": {
+        "courses": [
+          {
+            "course_id": 1,
+            "name": "Math"
+          },
+          {
+            "course_id": 2,
+            "name": "English"
+          },
+          {
+            "course_id": 3,
+            "name": "Science"
+          },
+          {
+            "course_id": 4,
+            "name": "History"
+          }
+        ]
+      }
+    }
+  ]
 }
