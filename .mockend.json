@@ -2,7 +2,7 @@
   "User": {
     "firstName": { "loremWord": {} },
     "lastName": { "loremWord": {} },
-    "emailAddress": { "string": {} },
+    "emailAddress": { "loremWord": {} },
     "groups": {
       "hasMany": "Group"
     }
