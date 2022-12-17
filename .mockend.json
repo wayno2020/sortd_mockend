@@ -3,23 +3,39 @@
     "firstName": { "string": {} },
     "lastName": { "string": {} },
     "emailAddress": { "string": {} },
-    "group": { "belongsTo": "Group" },
+    "groups": {
+      "hasMany": "Group"
+    }
   },
   "Task": {
     "title": { "string": {} },
-    "createdAt": { "dateTime": {} },
-    "list": { "belongsTo": "List" },
+    "dateCreated": { "dateTime": {} },
+    "list": {
+      "belongsTo": "List"
+    }
   },
   "List": {
-    "tasks": { "hasMany": "Task" },
-    "board": { "belongsTo": "Board" },
+    "tasks": {
+      "hasMany": "Task"
+    },
+    "board": {
+      "belongsTo": "Board"
+    }
   },
   "Board": {
-    "lists": { "hasMany": "List" },
-    "group": { "belongsTo": "Group" },
+    "lists": {
+      "hasMany": "List"
+    },
+    "groups": {
+      "hasMany": "Group"
+    }
   },
   "Group": {
-    "users": { "hasMany": "User" },
-    "boards": { "hasMany": "Board" },
+    "users": {
+      "hasMany": "User"
+    },
+    "boards": {
+      "hasMany": "Board"
+    }
   }
 }
