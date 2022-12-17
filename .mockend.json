@@ -1,44 +1,14 @@
-{
-  "User": {
-    "firstName": { "string": {} },
-    "lastName": { "string": {} },
-    "emailAddress": { "string": {} },
-    "groups": {
-      "hasMany": "Group"
-    }
-  },
-  "Task": {
+
+  "Post": {
     "title": { "string": {} },
-    "dateCreated": { "dateTime": {
-        "min": "2010-01-01T00:00:00Z",
-        "max": "2020-12-31T23:59:59Z"
-      }},
-    "list": {
-      "belongsTo": "List"
+    "comments": {
+      "hasMany": "Comment"
     }
   },
-  "List": {
-    "tasks": {
-      "hasMany": "Task"
-    },
-    "board": {
-      "belongsTo": "Board"
-    }
-  },
-  "Board": {
-    "lists": {
-      "hasMany": "List"
-    },
-    "groups": {
-      "hasMany": "Group"
-    }
-  },
-  "Group": {
-    "users": {
-      "hasMany": "User"
-    },
-    "boards": {
-      "hasMany": "Board"
+  "Comment": {
+    "body": { "string": {} },
+    "post": {
+      "belongsTo": "Post"
     }
   }
 }
